@@ -1,0 +1,108 @@
+1.crear carpeta y luego abrir la consola powershel,colocar cd  mas espacio y pegas.Ahora coloca  npm init -y y luego enter para
+ iniciar json, ahora abre Visual Studio Code y arrastra la carpeta creada hacia el,despues en consola pon npm color inquirer  y luego enter
+tabien el paquete npm i node.Ahora modificamos el archivo package.json y en donde dice scripts colocamos "start": "node index.js" y lo ejecutamos con npm start
+
+paquetes instalados:npm color inquirer		importar					instanciar
+	npm i express     		/ const express = require('express');  		const app = express();
+	npm i hbs  			/ const hbs = require('hbs');			const puerto =process.env.PUERTO;
+
+	npm i dotenv 			/requires('dontenv').config();
+					Sirve para estableces las variables de entorno en mi app de node configurar unavariable de entorno
+	heroku --version
+2.	
+-Crear un archivo index.js en la raiz que sera nuestro controlador de las paginas.
+-despues crear una carpeta public en la raiz.
+	 .dentro una carpeta access
+		dentro de access las carpetas css,fonts y js.
+	 .dentro de la carpeta access una carpeta imagenes.
+
+-Luego crear una carpeta  Views,esta carpeta es buscada automaticamente por hbs.
+	Dentro de Views creamos 3 archivos tipo .hbs donde colocaremos lo desglosado de cada pagina desglosada como elements,generic y home.
+	Dentro de Views creamos una carpeta llamada partials.
+		Dentro de la carpeta partials creamos 3 archivos .hbs de los elementos com	o header.hbs, footer.hbs, nav.hbs que desde aqui 
+		seran almacenados para que sean declarados en las otras paginas.
+
+3.PASOS NECESARIOS PARA DESPLEGAR LAS APLICACIONES EN LA MAYORIA DE LOS HOSTING CONFIGURAR
+ Configurar  una variable del entorno del puerto instalamos en la consola 
+ Creamos un archivo .env en la raiz de la app para variables de entorno. y en el archivo colocamos nuestra variable PUERTO=808
+Una ves desplegada la aplicacion en el hosting ,el puerto tiene que leerse las variables de entorno porque en el hosting donde 
+lo despleguemos me van a establecer el puerto de manera automatica en los environments y el archico .env va a verificar por mi ,
+si no existe el puerto configurado,si no existe ,va a usar el puerto,pero si ya existe entonces va a utilizar el que me ofresca mi hosting. 
+
+Cuando se sube a un hosting hay algunos que trabajan sin los modulos de node pero hay otros que trabaja nen base a git y no tenemos que hacerle
+respaldo a los modulos de node entonces :
+Creamos un archivo. git en la raiz de la app llamado .gitignore,este archivo sera ignorado por git ,es decir que git no le haga seguimiento.
+								dentro del archivo .gitignore colocar lo ignorado como node_modules/
+Luego preparamos el repositorio 
+-git init        inicializa git		
+-git add .	 preparamos todos nuestos archivos para prepararlos para el stage
+-git commit -m ""   tomemos dicha fotografia preparada por git add . con un commit -m ""
+
+Heroku-subiendo nuestra aplicacion a produccion
+Ha llegado el momento de desplegar nuestra aplicacion de nudejs en la nube y para eso vamos a usar 
+y para eso vamos a usar un servicio de serverles para desplegar la aplicacion de node de forma gratuita
+Hostings gratuitos para desplegar nuestra aplicacion:
+.Firebase hosting
+.AWS Fre Tier
+.Google Cloud
+.Azure
+.DigitalOcean
+.Heroku
+Nos registramos en uno de ellos en  este caso en Heroku,una ves iniciado sesion creamos una nueva app/estadods unidos.
+Ahora necesitamos hacer el deploy de la misma con git heroku.
+Ejecutamos el comando de heroku 
+heroku --version
+				para instalar heroku nos vamoso asu pagina install the Heroku CLI/ escojemos el sistema operativo en 64 o 32.
+				Despues de instalar colocamos 
+
+heroku login 	en la consola ,apretamos enter y nos redirecciona 
+				Aceptamos en la pagina y nos inicia sesion en la consola.
+				luego colocamos en consola 
+cd miproyecto\
+				creamos repositorio con git heroku 
+git init 		
+				, despues  
+heroku git:remote -a nombredeturepositorio
+				esto hace la coneccion de repositorio local con heroku,luego en 
+git add .		
+				,
+git commit -m ""	
+				,despues 
+git log 		
+				para ver si existen commit,
+git branch 		
+				para ver en que rama esta,
+				y ahora 
+git push heroku master  
+				para subir los cambios al git heroku.
+				Despues nos muesstra el link creado por heroku y lo copiamos.
+
+
+4. Desplegando aplicaciones de Angular y React
+instalamos un paquete llamado 
+
+npm install --global http-server 
+					servidor que monta nuestra aplicacion web
+					luego cd y nuestra aplicacion 
+cd aplicacion/  
+					enter,luego 
+http-server -o    
+					enter y se abre la pagina web 
+5.
+Subir los cambios a Heroku o actualizar
+una ves realizado los cambios  colocar 
+git add .
+
+git commit -m "actualizando cambios "
+
+git remote -v
+					Sirve para ver los repositorios y el siguiente sera para 
+					agregar los cambios al hosting de heroku
+git push heroku master
+
+
+
+
+
+	
+
